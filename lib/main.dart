@@ -1,5 +1,7 @@
-import 'package:app_dev_2_lab_2/part_1.dart';
 import 'package:flutter/material.dart';
+import 'package:app_dev_2_lab_2/part_1.dart';
+import 'package:app_dev_2_lab_2/part_2.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -29,21 +31,23 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          OutlinedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => Part2Main()));
-              },
-              child: Text('Part 1')),
-          OutlinedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => Placeholder()));
-              },
-              child: Text('Part 2')),
-        ],
+      body: Center(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            OutlinedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Part1Main()));
+                },
+                child: Text('Part 1')),
+            OutlinedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Part2Main()));
+                },
+                child: Text('Part 2')),
+          ],
+        ),
       ),
     );
   }
