@@ -52,8 +52,19 @@ class TriviaQuestion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (questions.isEmpty) {
-      return Scaffold(
-          body: Center(child: Text('Quiz complete! Score: ${score} / 10')));
+      var dialogFuture = showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Quiz complete!'),
+              content: Text('Your score is ${score} / 10'),
+            );
+          });
+      return FutureBuilder(
+          future: dialogFuture,
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            return Center(child: Text('Done'));
+          });
     } else {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
