@@ -35,7 +35,7 @@ class _Part2MainState extends State<Part2Main> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Trivia'),
+        title: const Text('Trivia'),
       ),
       body: TriviaQuestion(questions: randomQuestions, score: 0),
     );
@@ -56,14 +56,14 @@ class TriviaQuestion extends StatelessWidget {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Quiz complete!'),
+              title: const Text('Quiz complete!'),
               content: Text('Your score is ${score} / 10'),
             );
           });
       return FutureBuilder(
           future: dialogFuture,
           builder: (BuildContext context, AsyncSnapshot snapshot) {
-            return Center(child: Text('Done'));
+            return const Center(child: Text('Done'));
           });
     } else {
       return Column(
@@ -81,7 +81,7 @@ class TriviaQuestion extends StatelessWidget {
                                   ? score + 1
                                   : score))));
                 },
-                child: Text('True')),
+                child: const Text('True')),
             OutlinedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
@@ -92,7 +92,7 @@ class TriviaQuestion extends StatelessWidget {
                                   ? score + 1
                                   : score))));
                 },
-                child: Text('False'))
+                child: const Text('False'))
           ])
         ],
       );

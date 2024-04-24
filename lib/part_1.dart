@@ -26,7 +26,7 @@ class _Part1MainState extends State<Part1Main> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Sound player')),
+        appBar: AppBar(title: const Text('Sound player')),
         body: Column(
           children: [
             Expanded(
